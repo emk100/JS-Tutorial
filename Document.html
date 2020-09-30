@@ -164,9 +164,41 @@
            }
 
         }
+        function validate13() {
+        
+        var text = document.getElementById("text13").value;
+        // ^sign insine sq braqets means !//
+        //^ outside means starting point
+        //$ means end of the string
+        //.(dot) means that character can be enything
+        //+ means that it can be applied at lead 1 character
+        
+        var regex = /^([a-z 0-9 \.-]+)@([a-z 0-9 -]+).([a-z]{2, 8})(.[a-z]{2, 8})?$/;
+        if (regex.test(text)) {
+            document.getElementById("label13").innerHTML = "Valid";
+            document.getElementById("label13").style.visibility = "visible";
+            document.getElementById("label13").style.color = "green";
+        } else {
+            document.getElementById("label13").innerHTML = "Invalid";
+            document.getElementById("label13").style.visibility = "visible";
+            document.getElementById("label13").style.color = "red";
+        }
+
+     }
         </script>
     </head>
     <body>
+        <!--13 Email Validation-->
+        <br>
+        <form>
+            <input id = "text13" placeholder="Email"
+            type = "text" /><br>
+            <label id = "label13" style="color:red; 
+            visibility: hidden;">Invalid</label>
+            <br>
+            <button onclick="validate13()" type = "button">Submit</button>
+        </form>
+        <br>
         <!--12. Phone Numbers-->
         <br>
         <form>
