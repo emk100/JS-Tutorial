@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <title>My title</title>
+        <script  type = "text/javascript">
+        //   document.write("<h1>If else statement</h1>");
+           
+        //    var a = 16;
+        //    if (a % 2 === 0) {
+        //        document.write("<h3>even</h3>");
+        //    }else {
+        //        document.write("<h3>odd</h3>");
+        //    }
+        //    var b = 5;
+        //    var res = a + b;
+        //    document.write(res);
+
+        //    document.write("<h1>Switch</h1>");
+        //    var day = 20;
+        //    switch(day) {
+        //         case 1 :
+        //            document.write("<h2>Sunday</h2>");
+        //            break;
+        //         case 2 :
+        //            document.write("<h2>Monday</h2>");
+        //            break;
+        //         case 3 :
+        //            document.write("<h2>Tusday</h2>");
+        //            break;
+        //         default:
+        //            document.write("<h2>Wrong Ans</h2>");
+        //    };
+        function buttonClick() {
+           // alert("Button Clicked");
+           // document.write("text");
+            document.getElementById("heading2").innerHTML = "Learning";
+        }
+        function fn1 () {
+            var str = document.getElementById("text1").value;
+            alert("Value is:" + str);
+        }
+        function fn2 () {
+            var rd1 = document.getElementById("rd1");
+            var rd2 = document.getElementById("rd2");
+            if (rd1.checked == true) {
+                alert("Selected is:" + rd1.value);
+            }else if (rd2.checked == true) {
+                alert("Selected is:" + rd2.value);
+            }else {
+                alert("No selector");
+            }
+        }
+        function fn4() {
+            var select = document.getElementById("SelectBox");
+            alert(select.options[select.selectedIndex].value);
+        }
+        function fn5 () {
+            var param5 = document.getElementsByTagName("p");
+            param5[0].style.fontSize = 25;
+            param5[1].style.color = "red";
+        }
+        function fn6 () {
+            var para = document.getElementsByClassName("mypara");
+            for (var i = 0; i < para.length; i++) {
+                para[i].style.color = "red";
+            }
+            
+        }
+
+        
+        function setNewImage() {
+           document.getElementById("img1").src = "earth2.jpeg";
+
+        }
+        function setOldImage() {
+            //alert();
+            document.getElementById("img1").src = "earth.jpg";
+            
+        }
+        function validate8() {
+            var username = document.getElementById("uname");
+            var password = document.getElementById("pass");
+
+            if (username.value.trim() == "" || password.value.trim() == "") {
+                alert("no blanck values allowed");
+                return false;
+            }
+            else {
+                 true;
+            }
+
+        }
+        function validate9() {
+            var uname = document.getElementById("uname9");
+            var pass = document.getElementById("pass9");
+            if (uname.value.trim() == "") {
+                alert("Blank Username");
+                uname.style.border = "solid 3px red";
+                document.getElementById("label9")
+                .style.visibility = "visible";
+                return false;
+            }else if (pass.value.trim() == "") {
+                alert("Blank Password");
+                pass.style.border = "solid 3px red";
+                return false;
+            }
+            else if (pass.value.trim().length < 5) {
+                alert("Password too short");
+                pass.style.border = "solid 3px red";
+                return false;
+            }else {
+                return true;
+            }
+        }
+        function validate10() {
+            var username = document.getElementById("uname10").value;
+            var regex = /E00/;
+            //var regex = /E00/i; case insensitive
+            if (regex.test(username)) {
+                alert("Valid Username");
+            }else {
+                alert("Invalid Username");
+                document.getElementById("label10").style.visibility="visible";
+            }
+        }
+        function validate11() {
+            var username = document.getElementById("uname11").value;
+            var regex = /[^1ab]abc/;// exclude caracter
+            //var regex = /[0-9]a[6-9]bc/;
+            //var regex = /[0-9]abc/;
+            //var regex = /[a-x A-X]00/;
+            //var regex = /[a-x]imple/;
+            //var regex = /[sdp]imple/;
+            //regex = new RegExp("E00","i");
+            //var regex = /E00/i; case insensitive
+            if (regex.test(username)) {
+                alert("Valid Username");
+            }else {
+                alert("Invalid Username");
+                document.getElementById("label11").style.visibility="visible";
+            }
+        }
+        function validate12() {
+            //var regex = /[7-9][0-9]{9}/;
+            //var regex = /[7-9]\d{9}/;
+            /*
+            \d (0-9)
+            \w (a-z, A-Z, 0-9 & _)
+            \s whitespace character (spaces & tabs)
+            \t match the tab only
+            */
+           var text = document.getElementById("text12").value;
+           // ^sign insine sq braqets means !//
+           //^ outside means starting point
+           //$ means end of the string
+           var regex = /^[7-9]\d{9}$/;
+           if (regex.test(text)) {
+               document.getElementById("label12").innerHTML = "Valid";
+               document.getElementById("label12").style.visibility = "visible";
+               document.getElementById("label12").style.color = "green";
+           } else {
+               document.getElementById("label12").innerHTML = "Invalid";
+               document.getElementById("label12").style.visibility = "visible";
+               document.getElementById("label12").style.color = "red";
+           }
+
+        }
+        </script>
+    </head>
+    <body>
+        <!--12. Phone Numbers-->
+        <br>
+        <form>
+            <input id = "text12" placeholder="Cellphone"
+            type = "text" /><br>
+            <label id = "label12" style="color:red; 
+            visibility: hidden;">Invalid</label>
+            <br>
+            <button onclick="validate12()" type = "button">Submit</button>
+        </form>
+        <br>
+        <!--11. regular Expressions Character sets and Ranges-->
+        <br>
+        <form action = "massage.html" >
+            <input id = "uname11" placeholder="Username"
+            type = "text" /><br>
+            <label id = "label11" style="color:red; 
+            visibility: hidden;">Invalid Username</label>
+            <br>
+            <button onclick="validate11()" type = "button">Submit</button>
+        </form>
+
+        <br>
+        <!--10. regular exoresions-->
+        <br>
+        <form action = "massage.html" >
+            <input id = "uname10" placeholder="Username"
+            type = "text" /><br>
+            <label id = "label10" style="color:red; 
+            visibility: hidden;">Invalid Username</label>
+            <br>
+            <button onclick="validate10()" type = "button">Submit</button>
+        </form>
+        <br>
+        <!--9. form validations-->
+        <br>
+        <form onsubmit = "return validate9()"
+         action = "massage.html">
+            <input id = "uname9" placeholder="Username"
+            type = "text" />
+            <label id = "label9" style="color:red; 
+            visibility: hidden;">Invalid</label>
+            <br><br>
+            <input id = "pass9" placeholder="Password" 
+            type="password" />
+            <br>
+            <br>
+            <button  type = "submit">Submit</button>
+        </form>
+
+        <br>
+        <!--8. Form Validations-->
+        <br>
+        <form onsubmit = "return validate8()"
+         action = "massage.html">
+            <input id = "uname" placeholder="Username"
+            type = "text" required/><br><br>
+            <input id = "pass" placeholder="Password" 
+            type="password" required/>
+            <br>
+            <br>
+            <button  type = "submit">Submit</button>
+        </form>
+        <br>
+        <!--7. Mousesetover mousesetout-->
+        <br>
+        <img id = "img1" onmouseover = "setNewImage()" 
+        onmouseout = "setOldImage()" 
+         src = "earth.jpg" width = 300/>
+        <br>
+        <!--6. Class Name-->
+        <br>
+        <p id = "p1" class = "mypara">Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p class = "mypara">Paragraph 3</p>
+        <p>Paragraph 4</p>
+        <p class = "mypara">Paragraph 5</p>
+        <br>
+        <br>
+        <button onclick="fn6()">click me</button>
+        <!--5.Tag Name-->
+        <br>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <p>Paragraph 4</p>
+        <p>Paragraph 5</p>
+        <br>
+        <button onclick="fn5()">click me</button>
+        <br>
+        <!--4.Drop Down Box-->
+        <br>
+        <select id = "SelectBox">
+            <option value="Simple Snippets">Simple Snippets</option>
+            <option value="Learning">Learning</option>
+            <option value="MKBHO">MKBHO</option>
+        </select>
+        <br>
+        <button onclick="fn4()">click me</button>
+        <br>
+        <!--1.Simple button-->
+        <br>
+        <button onclick = "buttonClick()">click me</button>
+        <h2 id = "heading2">Some Random Text</h2>
+        <!--2.input text-->
+        <input id = "text1" placeholder="username">
+        <br>
+        <input type = "password" id = "text2" placeholder="password">
+        <br>
+        <button onclick="fn1()" id = "btn1" >Click me</button>
+        <br>
+        <!--3.Radio-->
+        <br>
+        <input id = "rd1" name = "grp1" type = "radio" value="Simple Snippets"> Sinmple Snippets</input>
+        <br>
+        <input id = "rd2" name = "grp1" type = "radio" value="Learning">Learning </input>
+        <br>
+        <button onclick="fn2()" id = "btn">click me</button>
+ 
+
+
+    </body>
+</html>
