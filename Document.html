@@ -185,9 +185,129 @@
         }
 
      }
+     function fn14() {
+         var a = document.getElementById("t14").value;
+         var b = document.getElementById("t14-2").value;
+         document.getElementById("op14").innerHTML = "Result= " + (a + b);
+         console.log(a + b);
+     }
+
+
+     var id15 = 0;
+     var sec15 = 0;
+     function printMSG15() {
+         document.getElementById("op15").innerHTML = sec15 +"seconds";
+         sec15++;
+     }
+     function start15() {
+         //id15 = window.setTimeout(printMSG15 , 5000);
+         id15 = window.setInterval(printMSG15 , 1000);
+     }
+     function stop15() {
+        // window.clearTimeout(id15);
+        window.clearInterval(id15);
+     }
+
+     // fade
+     var opacity16 = 0;
+     var intID16 = 0;
+     function hide16 () {
+         var img = document.getElementById("img16");
+         opacity16 = Number( window.getComputedStyle(img).getPropertyValue("opacity"));
+        if (opacity16 > 0) {
+            opacity16 -= 0.1;
+            img.style.opacity = opacity16;
+        } else {
+            clearInterval(intID16);
+        }
+     
+     }
+     function fadeOut16() {
+        intID16 = setInterval(hide16, 20);
+     }
+     function show16() {
+        var img = document.getElementById("img16");
+        opacity16 = Number( window.getComputedStyle(img).getPropertyValue("opacity"));
+        if (opacity16 < 1) {
+            opacity16 += 0.1;
+            img.style.opacity = opacity16;
+        } else {
+            clearInterval(intID16);
+        }
+     }
+     function fadein16() {
+        intID16 = setInterval(show16, 20);
+        
+
+     }
+     var width17 = 100;
+     var diff17 = 2;
+     var intid17 = 0;
+    // document.getElementById("img17").style.width = width;
+     function increaze17() {
+        clearInterval(intid17);
+        intid17 = setInterval(zoomin17, 20);
+     }
+     function decrease17() {
+        clearInterval(intid17);
+        intid17 = setInterval(zoomout17, 20);
+     }
+     function zoomin17() {
+         if(width17 < 200) {
+             width17 += diff17;
+             document.getElementById("img17").style.width = width17;
+         }else {
+             clearInterval(intid17);
+         }
+     }
+     function zoomout17() {
+         if(width17 > 100) {
+             width17 -= diff17;
+             document.getElementById("img17").style.width = width17;
+         }else {
+             clearInterval(intid17);
+         }
+     }
+
+
         </script>
     </head>
     <body>
+        <!--Jquery-->
+        <br>
+        
+        <br>
+        <!--17. zoom in zoom out-->
+        <br>
+        <br>
+        <img onmouseover="increaze17()" onmouseout="decrease17()" id = "img17"
+        src = "earth.jpg" width="100"/>
+
+        <br>
+        <!--16. Fade Out animations-->
+        <br>
+        <button onclick="fadeOut16()" id = "btn16"> Fade Out</button>
+        <br>
+        <img id = "img16" src = "earth.jpg" width = 250px/>
+        <br>
+        <button onclick="fadein16()" id = "btn16-2">Fade In</button>
+
+        <br>
+        <!--15. Timing Functions-->
+        <br>
+        <button onclick="start15()" id = "btnst15">Start</button>
+        <h2 id = "op15"> Some Text</h2>
+        <button onclick="stop15()" id = "btnen15">Stop</button>
+        <br>
+        <!--14. Debugging-->
+        <br>
+        <input id = "t14" placeholder="Text 1"/>
+        <br><br>
+        <input id = "t14-2" placeholder="Text 2"/>
+        <br><br>
+        <button onclick = "fn14()" id = "btnAdd14">Add</button>
+        <h2 id = "op14"> Result</h2>
+        <br>
         <!--13 Email Validation-->
         <br>
         <form>
