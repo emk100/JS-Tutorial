@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Introduction to jQuery UI</title>
+        <link rel ="stylesheet" href = "mainUI.css">
+        <link rel ="stylesheet" href = "jqueryUI/jquery-ui.css">
+        <link rel ="stylesheet" href = "jqueryUI/jquery-ui.structure.css">">
+        <link rel ="stylesheet" href = "jqueryUI/jquery-ui.theme.css">">
+    </head>
+    <body>
+        <!--1 Calendar-->
+        <br>
+        <div id = "mydiv1">
+            <h3>Introduction to jQuery UI</h3>
+            <input id = "dateInput1" placeholder="click to select date" type="text">
+        </div>
+        <br>
+        <!--2. Tooltip-->
+        <br>
+        <div id = "mydiv2">
+            <h3>Tooltip in jQuery UI</h3>
+            <img src = "earth.jpg" title = "Earth" width="200px" id = "myimg2">
+        </div>
+        <br><!--3. Widget Control-->
+        <br>
+        <h3>Accordion example</h3>
+        <div id = "panels3">
+
+            <h3>Learning</h3>
+            <p>Telesco is largest tech chanell in india</p>
+
+            <h3>Simple Snippets</h3>
+            <p>Simple Snippets it ts uppcoming</p>
+
+            <h3>MKBHD</h3>
+            <p>My favourite Chanel</p>
+        </div>
+        <br>
+        <!--4. Message Box Widget-->
+        <br>
+        <h3>Message Box Widget</h3>
+
+        <div id = "panels4" class = "myDiv4">
+            <h3>Hello Learning</h3>
+            <br>
+            <button id = "btn4">Click to Show message box</button>
+        </div>
+        <br>
+        <div id = "msgBox4" title="messagebox4" class="myDiv4">
+           
+            <h3>Dummy Title</h3>
+            <img src="earth.jpg" width="200px">
+            <br>
+            
+        </div>
+
+        
+    </body>
+    <script src = "jquery.js" type = "text/javascript" ></script>
+    <script src = "jqueryUI/jquery-ui.js" type="text/javascript"></script>
+    <script>
+        //4.
+        $("#btn4").click(function(){
+            //alert("button cklikked");
+            $("#msgBox4").dialog({
+                title:"Cosutome msgBox",
+                draggable:false,
+                resizable:true,
+                modal:true,
+                buttons:[
+                    {
+                        text: "close",
+                        click :function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                ]
+
+
+            });
+
+        });
+        //3.
+        $("#panels3").accordion({
+            collapsible:true,
+            animate:200,
+            active:0,
+            heightStyle:true
+        });
+
+        //2.
+        $("img").tooltip({
+            track:true,
+            content:"Earth",
+            show:{effect:"bounce", duration :2000}
+        });
+
+
+
+        //1.      
+        $("#dateInput1").datepicker({
+            numberOfMonths:1,
+            changeYear:true,
+            changeMonth:true,
+            showWeek:true
+        });
+    </script>
+</html>

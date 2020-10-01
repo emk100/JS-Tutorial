@@ -184,9 +184,209 @@
         
         <br>
         <br>
+        <br>
+        <br>
+        <!--8. Callback and chainig effects-->
+        <h2 class>Callback and chainig effects</h2>
+        <button  id = "btn8">Toggle</button>
+        <div id = "firDiv8" class = "myhead8">
+            <p>This is firs para in first div</p>
+            <p>This is sec para in first div</p>
+
+        </div>
+        <div id = "secDiv8" class = "myhead8">
+            <p>This is firs para in sec div</p>
+
+        </div>
+        <!--9. DOM Manipulations-->
+        <!--text, html, attr, css-->
+        <h2 class>DOM Manipulations</h2>
+        <button  id = "btn9">Action</button>
+        <div id = "firDiv9" class = "myhead9">
+            <p id = "p9" value = "hello world">This is firs <b>para</b> in first div</p>
+        
+        </div>
+        <!--10. Dom Manipilations Part 2 changing values-->
+        <br>
+        <br>
+        <h2 class>DOM Manipulations Part 2</h2>
+        <button  id = "btn10">Set Value</button>
+        <button  id = "btn10-2">Get Value</button>
+        <div id = "div10" class = "myhead10">
+            <p id = "p10" class = "p10class" value = "hello world">This is firs <b>para</b> in <i>first</i> div</p>
+        
+        </div>
+        <br>
+        <br>
+        <!--11. Dom Manipilations Part 3-->
+        <br>
+        <br>
+        <h2 class>DOM Manipulations Part 3</h2>
+        <button  id = "btn11-1">Append</button>
+        <button  id = "btn11-2">After</button>
+        <button  id = "btn11-3">Prepend</button>
+        <button  id = "btn11-4">Before</button>
+        <br>
+        <br>
+        <button  id = "btn11-5">Remove</button>
+        <button  id = "btn11-6">Empty</button>
+        <div id = "div11" class = "myhead11">
+            <p id = "p11" class = "p11class" value = "hello world">This is firs <b>para</b> in <i>first</i> div</p>
+        
+        </div>
+        <br>
+        <br>
+        <!--12. Dom Manipilations Part 4-->
+        <br>
+        <br>
+        <h2 class>DOM Manipulations Part 4</h2>
+        <button  id = "btn12-1">Add Class</button>
+        <button  id = "btn12-2">Remove Class</button>
+        <button  id = "btn12-3">PrToggle Class</button>
+        <button  id = "btn12-4">CSS</button>
+        <br>
+        <br>
+        <div id = "div12" class = "myhead12">
+            <p id = "p12" class = "p12class" value = "hello world">This is firs <b>para</b> in <i>first</i> div</p>
+        
+        </div>
+        <div id = "div12-2" >
+            <p id = "p12-2" class = "p12class" value = "hello world">This is firs <b>para</b> in <i>first</i> div</p>
+        
+        </div>
+        <br>
+        <br>
+         <!--13. jQuery UI-->
+         <br>
+         <br>
+         <h2 class>DOM Manipulations Part 4</h2>
+         <button  id = "btn12-1">Add Class</button>
+         <button  id = "btn12-2">Remove Class</button>
+         <button  id = "btn12-3">PrToggle Class</button>
+         <button  id = "btn12-4">CSS</button>
+         <br>
+         <br>
+         <div id = "div12" class = "myhead12">
+             <p id = "p12" class = "p12class" value = "hello world">This is firs <b>para</b> in <i>first</i> div</p>
+         
+         </div>
+         <div id = "div12-2" >
+             <p id = "p12-2" class = "p12class" value = "hello world">This is firs <b>para</b> in <i>first</i> div</p>
+         
+         </div>
+         <br>
+         <br>
 
         
         <script>
+            //12.
+            $(document).ready(function() {
+                $("#btn12-1").click(function(){
+                    $("#div12").addClass("newhead12 new2head12");
+                });
+                $("#btn12-2").click(function(){
+                    $("#div12").removeClass("newhead12");
+                });
+                $("#btn12-3").click(function(){
+                    $("#div12").toggleClass("newhead12");
+                });
+                $("#btn12-4").click(function(){
+ 
+                    $("#div12").css("font-size", "20px");
+                });
+
+            });
+
+
+
+            //11.
+            $(document).ready(function(){
+
+                $("#btn11-1").click(function(){
+                    $("#div11").append("<p>This is Second Para in first div</p>");
+                });
+
+                $("#btn11-2").click(function(){
+                    $("#div11").after("<p>This is Second Para in first div</p>");
+                });
+                 
+                $("#btn11-3").click(function(){
+                    $("#div11").prepend("<p>This is Second Para in first div</p>");
+                });
+                $("#btn11-4").click(function(){
+                    $("#div11").before("<p>This is Second Para in first div</p>");
+                });
+                $("#btn11-5").click(function(){
+                    //$("#div11").remove();
+                    $("p").remove("#p11");
+                });
+                $("#btn11-6").click(function(){
+                    $("#div11").empty();
+                });
+            });
+
+
+            //10.
+            $(document).ready(function(){
+                $("#btn10").click(function(){
+                    //alert($("#p10").attr("class"));
+                   // $("#p10").attr("class", "p10-2class")
+
+                    $("#p10").css("font-size", "25px")
+                });
+                
+                $("#btn10-2").click(function(){
+                    alert($("#p10").css("font-size"));
+                    //alert($("#p10").attr("class"));
+                    //$("#p10").attr("class", "p10-2class")
+                }) 
+            });
+
+
+
+
+            //9.
+            $(document).ready(function() {
+                $("#btn9").click(function() {
+                    //text html
+                    //$('#p9').text();
+                    //alert($('#p9').text());
+                    //alert($('#p9').html());
+
+                    //atrib
+                    //alert($('#p9').attr("value"));
+
+                    //css
+                    alert($('#p9').css("color"));
+
+                }); 
+
+            });
+
+            //8.
+            $(document).ready(function() {
+                function printMSG() {
+                    alert("Efect Done");
+                }
+                //callback
+                // $("#btn8").click(function() {
+                //     $("#firDiv8").fadeToggle(2000, function(){
+                //         alert("Division is faded");
+                //     });
+                    
+                // });
+
+                //chaining
+                $("#btn8").click(function() {
+                    $("#firDiv8").slideUp(2000).slideDown().fadeIn();
+                    
+                    
+                });
+                
+
+            });
+
+
             //7.
             $(document).ready(function(){
                 $("#btn7-3").click(function() {
