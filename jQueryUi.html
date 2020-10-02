@@ -46,18 +46,140 @@
         </div>
         <br>
         <div id = "msgBox4" title="messagebox4" class="myDiv4">
-           
+
             <h3>Dummy Title</h3>
             <img src="earth.jpg" width="200px">
             <br>
-            
+
         </div>
 
-        
+        <!--5. Autocomplete Widget-->
+        <br>
+        <h3>Autocomplete Widget</h3>
+
+        <div id = "panels5" class = "myDiv5">
+            <label><b>Eneter Your favourite City</b></label>
+            <input type = "text" name ="" id = "textbox5">
+            <br>
+            <br>
+            <br>
+        </div>
+        <!--6. getter and setter Manipulations-->
+
+        <br>
+        <h3>getter and setter Manipulations</h3>
+        <button id = "btn6">Change</button>
+
+        <!--7. Draggable Feature in jQuery-->
+        <h2>Draggable Feature in jQuery</h2>
+        <div>
+            <div class = "cube7">
+                <h3>
+                    Cube 1
+                </h3>
+
+            </div>
+            <div class = "cube7">
+                <h3>
+                    Cube 2
+                </h3>
+
+            </div>
+        </div>
+        <!--8. Sortable Interaction-->
+
+        <h2>Sortable Interaction in jQuery</h2>
+        <div id = "mydivs8">
+            <div class = "cube8">
+                <h3>
+                    Cube 1
+                </h3>
+
+            </div>
+            <div class = "cube8">
+                <h3>
+                    Cube 2
+                </h3>
+
+            </div>
+        </div>
+
+         <!--9. Sortable Interaction-->
+
+         <h2>Resizable Interaction in jQuery</h2>
+         <div id = "mydivs9">
+            <img  width = "200" src = "earth.jpg" id = 'resize9' alt="">
+
+         </div>
+
+
+
+
+
+
+
     </body>
     <script src = "jquery.js" type = "text/javascript" ></script>
     <script src = "jqueryUI/jquery-ui.js" type="text/javascript"></script>
     <script>
+        //9.
+        $('#resize9').resizable({
+            maxWidth:500,
+            maxHeight:500,
+            autoHide: true,
+            ghost: true,
+            distance:200,
+            aspectRatio: true,
+        });
+        //8.
+        $("#mydivs8").sortable({
+            opacity: 0.5,
+            distance: 50,
+            delay: 300,
+
+        });
+
+
+
+        //7.
+        $(".cube7").draggable({
+            axis: 'y',
+            containment: 'parent',
+            cursor: "grabbing",
+            opacity: 0.5,
+            //grid:[300, 300]
+            //snap: true,
+            //snapTolerance:30
+        });
+
+
+
+
+        //6.
+
+
+        $("#btn6").click(function() {
+            var height = $("#dateInput1").datepicker("option","numberOfMonths",3);
+            aletr("us");
+
+        });
+
+
+
+
+
+        //5.
+        var cities5 = ["mumbai", "tbilisi","kutaisi"];
+        $("#textbox5").autocomplete({
+            source: cities5
+        },{
+            autoFocus: true,
+            delay:300,
+            minLength:2
+        });
+
+
+
         //4.
         $("#btn4").click(function(){
             //alert("button cklikked");
@@ -96,7 +218,7 @@
 
 
 
-        //1.      
+        //1.
         $("#dateInput1").datepicker({
             numberOfMonths:1,
             changeYear:true,

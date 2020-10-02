@@ -14,3 +14,19 @@
     padding: 10px;
 
 }
+.cube7 {
+    width:100px;
+    height: 100px;
+    background-color: aqua;
+    padding: 20px;
+    margin: 20px;
+}
+
+.cube8 {
+    width:100px;
+    height: 100px;
+    background-color: aqua;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+}
